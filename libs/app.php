@@ -1,5 +1,7 @@
 <?php
 
+require_once 'controllers/errors.php';
+
 class App
 {
     function __construct()
@@ -46,6 +48,8 @@ class App
 
                 }else{
                     // error, no existe el metodo
+                    $controller = new Errors();
+                    $controller->render();
                 }
                 
             } else {
@@ -58,6 +62,8 @@ class App
      } else {
 
         // no existe el archivo, manda error
+        $controller = new Errors();
+        $controller->render();
          
      }
     }
