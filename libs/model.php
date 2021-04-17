@@ -1,5 +1,7 @@
 <?php
 
+include_once 'libs/imodel.php';
+
 class Model
 {
     function __construct()
@@ -12,7 +14,7 @@ class Model
         return $this->db->connect()->query($query);
     }
 
-    function prepare(){
+    function prepare($query){
         return $this->db->connect()->prepare($query);
     }
 }
